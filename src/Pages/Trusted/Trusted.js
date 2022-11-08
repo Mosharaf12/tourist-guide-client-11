@@ -2,9 +2,10 @@ import React from 'react';
 
 const Trusted = () => {
     return (
-        <section className="p-6 bg-gray-100 text-gray-800">
+     <div className='my-12'>
+           <section className="p-6 bg-gray-100 text-gray-800">
         <div className="container p-4 mx-auto text-center">
-            <h2 className="text-4xl font-bold">Trusted by the industry leaders</h2>
+            <h2 className="text-4xl font-bold">Verify by the Trusted Companies</h2>
         </div>
         <div className="container flex flex-wrap justify-center mx-auto text-gray-600">
             <div className="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
@@ -49,6 +50,8 @@ const Trusted = () => {
             </div>
         </div>
     </section>
+
+     </div>
     );
 };
 
