@@ -1,6 +1,7 @@
 import AllServices from "../Pages/AllServices/AllServices";
 import Blog from "../Pages/Blog/Blog";
 import CardDetails from "../Pages/CardDetails/CardDetails";
+import ErrorPages from "../Pages/ErrorPages/ErrorPages";
 
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -11,6 +12,7 @@ export const router = createBrowserRouter([
     {
         path:'/',
         element: <Main></Main>,
+        errorElement: <ErrorPages></ErrorPages>,
         children:[
             {
                 path:'/',
