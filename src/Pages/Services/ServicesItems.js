@@ -11,7 +11,9 @@ const ServicesItems = ({service}) => {
                 <p className="text-gray-800">{description.slice(0,100)}...</p>
                 <h2 className='text-xl text-sky-600 font-semibold'>Price: ${price}</h2>
             </div>
+            <div className=''>
             <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-sky-600 text-gray-50">More Details</button>
+            </div>
         </div>
     </div>
     );

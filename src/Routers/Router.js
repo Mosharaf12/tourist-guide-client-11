@@ -1,4 +1,6 @@
+import AllServices from "../Pages/AllServices/AllServices";
 import Blog from "../Pages/Blog/Blog";
+
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../layout/Main");
@@ -11,7 +13,7 @@ export const router = createBrowserRouter([
         children:[
             {
                 path:'/',
-                loader: ()=> fetch(`http://localhost:5000/services`),
+                loader: ()=> fetch(`http://localhost:5000/homeservices`),
                 element: <Home></Home>
             },
             {
@@ -20,6 +22,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/services',
+                element:<AllServices></AllServices>
                 
             }
         ]
