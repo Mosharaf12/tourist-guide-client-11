@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 import { GoogleAuthProvider } from 'firebase/auth';
+import UseTitle from '../../Hooks/UseTitle';
 const notify = () => toast.success('Login successful');
 
 const googleProvider = new GoogleAuthProvider()
@@ -12,6 +13,7 @@ const Login = () => {
     const {signIn, googleSingPop}= useContext(AuthContext)
     const [error,setError]= useState('')
     const [success, setSuccess] =useState('')
+    UseTitle('Login');
 
     const handleSubmitLogin=(event)=>{
         event.preventDefault()
