@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const CardDetails = () => {
     const services = useLoaderData();
@@ -8,7 +10,12 @@ const CardDetails = () => {
     return (
       <div className='shadow-md'>
           <div className=" rounded-md  bg-gray-50 text-gray-800">
-        <img src={img} alt="" className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500" />
+          <PhotoProvider>
+      <PhotoView src={img}>
+        <img src={img} alt="" className="cursor-zoom-in object-cover object-center w-full rounded-t-md h-72 bg-gray-500" />
+       
+      </PhotoView>
+    </PhotoProvider>
         <div className="flex flex-col justify-between p-6 space-y-8">
             <div className="space-y-2">
                 <h2 className="text-3xl font-semibold tracking-wide">{title}</h2>
