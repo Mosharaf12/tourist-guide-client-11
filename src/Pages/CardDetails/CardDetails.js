@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import UseTitle from '../../Hooks/UseTitle';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Reviews from '../Reviews/Reviews';
 
 const CardDetails = () => {
+    const {user}= useContext(AuthContext);
     const services = useLoaderData();
     const {img,title,description,price}= services;
     UseTitle(`${title}`);
@@ -26,7 +29,7 @@ const CardDetails = () => {
             </div>
             <div className=''>
            <Link to=''>
-           <button type="button" className="flex justify-end p-3 font-semibold rounded-md bg-sky-600 text-gray-50">More Details</button>
+           <button type="button" className="flex justify-end p-3 font-semibold rounded-md bg-sky-600 text-gray-50">Check Out</button>
            </Link>
             </div>
         </div>
@@ -34,26 +37,10 @@ const CardDetails = () => {
 
     {/* reviews section  */}
 
-    <div className='p-10'>
-            <h1 className='uppercase text-3xl py-4'>Reviews about journey</h1>
-            <div className='flex items-center'>
-            <div className='flex items-center'>
-                <img style={{width: '60px'}} src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?b=1&s=612x612&w=0&k=20&c=IJ1HiV33jl9wTVpneAcU2CEPdGRwuZJsBs_92uk_xNs=" alt="" />
-                <h2 className='mx-3'>Mr jhankar</h2>
-            </div>
-
-            {/* form input review  */}
-            <div>
-                <form className='flex items-center'>
-                <input type="text" placeholder="Type here" className="input input-bordered w-full  mr-5"/>
-                    <button type='submit' className='btn btn-primary'>Post</button>
-                </form>
-            </div>
-            </div>
-        </div>
-    
+   <Reviews></Reviews>
       </div>
     );
 };
 
 export default CardDetails;
+

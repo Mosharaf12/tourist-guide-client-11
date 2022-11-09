@@ -89,7 +89,7 @@ const Register = () => {
                 <input type="password" name="password" id="password" placeholder="Password" required  className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-sky-600" />
                 
             </div>
-            <button className="block w-full p-3 text-center rounded-sm text-gray-50 bg-sky-600">Sign Up</button>
+            <button type='submit' className="block w-full p-3 text-center rounded-sm text-gray-50 bg-sky-600">Sign Up</button>
             <Toaster></Toaster>
 
             {/* error and success message  */}

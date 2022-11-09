@@ -1,3 +1,4 @@
+import AddServices from "../Pages/AddServices/AddServices";
 import AllServices from "../Pages/AllServices/AllServices";
 import Blog from "../Pages/Blog/Blog";
 import CardDetails from "../Pages/CardDetails/CardDetails";
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path:'/addservices',
+                element: <AddServices></AddServices>
             }
         ]
     }
