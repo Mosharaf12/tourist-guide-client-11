@@ -2,24 +2,42 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const Register = () => {
-    const {createUser}= useContext(AuthContext)
+    const {createUser,updateUser}= useContext(AuthContext)
 
     const handleSubmit=(event)=>{
         event.preventDefault()
         const form = event.target;
         const name = form.name.value;
-        const photoUrl = form.photoUrl.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name,photoUrl,email,password);
+        console.log(name,photoURL,email,password);
         createUser(email,password)
         .then(result=>{
             const user = result.user;
+            handleUpdateUser(name,photoURL)
             console.log(user);
+            form.reset()
         })
         .catch(error=> {
             console.error(error);
         })
+
+    }
+    const handleUpdateUser=(name,photoURL)=>{
+        const profile={
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUser(profile)
+        .then(()=>{
+
+        })
+        .catch(()=>{
+
+        })
+
+
 
     }
 
@@ -32,8 +50,8 @@ const Register = () => {
                 <input type="text" name="name" id="name" placeholder="name" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-sky-600" />
             </div>
             <div className="space-y-1 text-sm">
-                <label for="photoUrl" className="block text-gray-600">photoUrl</label>
-                <input type="text" name="photoUrl" id="photoUrl" placeholder="photoUrl" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-sky-600" />
+                <label for="photoURL" className="block text-gray-600">photoURL</label>
+                <input type="text" name="photoURL" id="photoURL" placeholder="photoURL" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-sky-600" />
             </div>
             <div className="space-y-1 text-sm">
                 <label for="email" className="block text-gray-600">email</label>
