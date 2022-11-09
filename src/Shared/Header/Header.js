@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import {FaUser} from 'react-icons/fa';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Header = () => {
+  const {user,logOut} = useContext(AuthContext);
+
+  const handleLogOut =()=>{
+    logOut()
+    .then(()=>{})
+    .catch(error=>{
+      console.error(error);
+    })
+  }
+
     const menuItems = <>
     <li><Link to='/'>Home</Link></li>
     <li><Link to='/blog'>Blog</Link></li>
-    <li><Link to='/login'>Login</Link></li>
-    <li><Link to='/register'>Register</Link></li>
+    {
+      user?
+      <>
+      <li><Link to='/reviews'>My Reviews</Link></li>
+      <li><Link to='/addservices'>Add Services</Link></li>
+      <li><button onClick={handleLogOut}>Log Out</button></li>
+      
+      </>
+      :
+      <li><Link to='/login'>Login</Link></li>
+    }
     </>
     return (
 
@@ -30,7 +51,19 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <Link className="btn">Get started</Link>
+    <h3 className='mx-3'>
+      {user?.displayName ? user.displayName : ''}
+    </h3>
+    <Link>
+      {
+        user?
+        <img title={user.displayName} style={{height: '40px',width: '40px' ,borderRadius: '50px'}} src={user?.photoURL} alt="" />
+        
+        
+        :
+        <FaUser></FaUser>
+      }
+    </Link>
   </div>
 </div>
     );

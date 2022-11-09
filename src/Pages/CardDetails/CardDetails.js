@@ -2,10 +2,12 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import UseTitle from '../../Hooks/UseTitle';
 
 const CardDetails = () => {
     const services = useLoaderData();
     const {img,title,description,price}= services;
+    UseTitle(`${title}`);
 
     return (
       <div className='shadow-md'>
