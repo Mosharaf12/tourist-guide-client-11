@@ -8,10 +8,8 @@ const Reviews = () => {
         fetch(`http://localhost:5000/reviews?email=${user?.email}`)
         .then(res => res.json())
         .then(data => setReviews(data))
-        
     }, [user?.email])
-    
-    console.log(reviews);
+
     const handlePostReview = (event) => {
         event.preventDefault();
         const message = event.target.message.value;
@@ -62,6 +60,12 @@ const Reviews = () => {
             </div>
             </div>
         </div>
+
+            <div>
+                {
+                    reviews.map(review=> <p key={review._id}>{review.message}</p> )
+                }
+            </div>
     
         </div>
     );
