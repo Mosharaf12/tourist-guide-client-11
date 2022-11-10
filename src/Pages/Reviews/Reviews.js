@@ -1,42 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
-const Reviews = () => {
-    const {user} =useContext(AuthContext);
-    const [reviews, setReviews] = useState([]);
-    useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-        .then(res => res.json())
-        .then(data => setReviews(data))
-    }, [user?.email])
-
-    const handlePostReview = (event) => {
-        event.preventDefault();
-        const message = event.target.message.value;
-        const name = user?.displayName;
-        const img = user?.photoURL;
-        console.log(message, name, img)
-        const review = {
-            message: message,
-            name: name,
-            img: img,
-            email: user.email
-        }
-
-        fetch('http://localhost:5000/reviews', {
-            method: "POST",
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(review)
-        })
-        .then(res => res.json())        
-        .then(data => {
-            console.log(data)
-            event.target.reset()
-        })
-        .catch(err => console.error(err))
-    }      
+const Reviews = ({handlePostReview}) => {
+    const {user}= useContext(AuthContext);
+    
+         
     return (
         <div>
              <div className='p-10'>
@@ -60,15 +28,10 @@ const Reviews = () => {
             </div>
             </div>
         </div>
-
-            <div>
-                {
-                    reviews.map(review=> <p key={review._id}>{review.message}</p> )
-                }
-            </div>
     
         </div>
     );
-};
+            };    
+            
 
 export default Reviews;

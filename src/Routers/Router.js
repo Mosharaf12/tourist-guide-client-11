@@ -5,6 +5,7 @@ import CardDetails from "../Pages/CardDetails/CardDetails";
 import ErrorPages from "../Pages/ErrorPages/ErrorPages";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Login/Register/Register";
+import MyReviews from "../Pages/MyReviews/MyReviews";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
@@ -47,7 +48,11 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/addservices',
-                element: <AddServices></AddServices>
+                element: <PrivateRoute><AddServices></AddServices></PrivateRoute>
+            },
+            {
+                path:'/reviews',
+                element:<MyReviews></MyReviews>
             }
         ]
     }

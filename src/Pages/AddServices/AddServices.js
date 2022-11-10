@@ -1,4 +1,6 @@
 import React from 'react';
+import toast, { Toaster } from 'react-hot-toast';
+const notify = () => toast.success('service add success');
 
 const AddServices = () => {
     const handlePlaceOrder=(event)=>{
@@ -26,7 +28,7 @@ const AddServices = () => {
         .then(res=> res.json())
         .then(data=> {
             console.log(data)
-            alert('service add success')
+             notify();
             form.reset();
         })
         .catch(error=> console.error(error))
@@ -49,6 +51,7 @@ const AddServices = () => {
             <textarea name='message' className="textarea textarea-bordered h-24 w-full my-5" placeholder="Add description"></textarea>
             <input className='btn btn-info my-3' type="submit" value="Add to services" />
         </form>
+        <Toaster></Toaster>
         
     </div>
     );
