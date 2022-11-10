@@ -16,7 +16,7 @@ const CardDetails = () => {
 
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews`)
+        fetch(`https://services-assignment-server.vercel.app/reviews`)
         .then(res => res.json())
         .then(data => setReviews(data))
     }, [reviews])
@@ -24,7 +24,7 @@ const CardDetails = () => {
     const handleDelete =id=>{
         const proceed = window.confirm('Are you sure, you want to cancel this order')
         if(proceed){
-            fetch(`http://localhost:5000/reviews/${id}`,{
+            fetch(`https://services-assignment-server.vercel.app/reviews/${id}`,{
                 method: 'DELETE',
             })
             .then(res=> res.json())
@@ -53,7 +53,7 @@ const CardDetails = () => {
             email: user.email
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://services-assignment-server.vercel.app/reviews', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

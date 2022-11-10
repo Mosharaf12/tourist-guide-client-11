@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
         children:[
             {
                 path:'/',
-                loader: ()=> fetch(`http://localhost:5000/homeservices`),
+                loader: ()=> fetch(`https://services-assignment-server.vercel.app/homeservices`),
                 element: <Home></Home>
             },
             {
@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/services/:id',
-                loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`),
+                loader: ({params})=> fetch(`https://services-assignment-server.vercel.app/services/${params.id}`),
                 element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>
             },
             {
