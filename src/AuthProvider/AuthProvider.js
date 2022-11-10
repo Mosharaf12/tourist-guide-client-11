@@ -12,18 +12,23 @@ const AuthProvider = ({children}) => {
 
 
     const createUser=(email,password)=>{
+        setLoading(true)
         return createUserWithEmailAndPassword(auth,email, password)
     }
     const signIn=(email,password)=>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
     const updateUser =(profile)=>{
+        setLoading(true)
         return updateProfile(auth.currentUser,profile)
     }
     const googleSingPop=(provider)=>{
+        setLoading(true)
         return signInWithPopup(auth, provider)
     }
     const logOut=()=>{
+        setLoading(true)
         return signOut(auth)
     }
 
@@ -41,7 +46,9 @@ const AuthProvider = ({children}) => {
 
 
 
-    const authInfo = {user,
+    const authInfo = {
+        user,
+        loading,
         createUser,
         signIn,
         updateUser,

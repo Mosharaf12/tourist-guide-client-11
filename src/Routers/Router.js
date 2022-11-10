@@ -5,6 +5,7 @@ import CardDetails from "../Pages/CardDetails/CardDetails";
 import ErrorPages from "../Pages/ErrorPages/ErrorPages";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Login/Register/Register";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -34,7 +35,7 @@ export const router = createBrowserRouter([
             {
                 path:'/services/:id',
                 loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`),
-                element: <CardDetails></CardDetails>
+                element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>
             },
             {
                 path:'/login',
