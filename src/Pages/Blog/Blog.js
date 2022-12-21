@@ -4,7 +4,8 @@ import UseTitle from '../../Hooks/UseTitle';
 const Blog = () => {
 	UseTitle('Blog')
     return (
-        <section className="bg-gray-100 text-gray-800">
+        <div className='pt-24'>
+			<section className="bg-gray-100 text-gray-800 my-6 rounded-xl">
 	<div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
 		<p className="p-2 text-sm font-medium tracking-wider text-center uppercase">How it works</p>
 		<h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">Blog Question section</h2>
@@ -41,6 +42,7 @@ const Blog = () => {
 		</div>
 	</div>
 </section>
+		</div>
     );
 };
 

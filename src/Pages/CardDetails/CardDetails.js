@@ -69,7 +69,7 @@ const CardDetails = () => {
     };        
 
     return (
-      <div className='shadow-md'>
+      <div className='shadow-md pt-24'>
           <div className=" rounded-md  bg-gray-50 text-gray-800">
           <PhotoProvider>
       <PhotoView src={img}>

@@ -57,15 +57,16 @@ const Login = () => {
     }
 
     return (
-        <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800 mx-auto my-8">
-        <h1 className="text-2xl font-bold text-center">Login</h1>
+     <div className='pt-24'>
+           <div className="w-full max-w-md space-y-3 rounded-xl p-3 bg-blue-100 text-gray-800 mx-auto my-12">
+        <h1 className="text-4xl font-bold text-blue-500 text-center">LOGIN</h1>
         <form onSubmit={handleSubmitLogin} className="space-y-6 ng-untouched ng-pristine ng-valid">
             <div className="space-y-1 text-sm">
-                <label for="email" className="block text-gray-600">email</label>
+                <label for="email" className="block text-md text-gray-600">Email</label>
                 <input type="email" name="email" id="email" placeholder="email" required   className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-sky-600" />
             </div>
             <div className="space-y-1 text-sm">
-                <label for="password" className="block text-gray-600">Password</label>
+                <label for="password" className="block text-md text-gray-600">Password</label>
                 <input type="password" name="password" id="password" placeholder="Password" required className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-sky-600" />
                
             </div>
@@ -79,7 +80,7 @@ const Login = () => {
         </form>
         <div className="flex items-center pt-4 space-x-1">
             <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
-            <p className="px-3 text-sm text-gray-600">Login with social accounts</p>
+            <p className="px-3 text-md text-gray-600">Login with social accounts</p>
             <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
         </div>
         
@@ -88,10 +89,11 @@ const Login = () => {
                 Login With Google
             </button>
         </div>
-        <p className="text-xs text-center sm:px-6 text-gray-600">Don't have an account?
+        <p className="text-md text-center sm:px-6 text-gray-600">Don't have an account?
             <Link to='/register' className="underline text-gray-800">Sign Up</Link>
         </p>
     </div>
+     </div>
 
     )
         

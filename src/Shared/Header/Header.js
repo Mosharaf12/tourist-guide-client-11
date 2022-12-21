@@ -15,23 +15,23 @@ const Header = () => {
   }
 
     const menuItems = <>
-    <li><NavLink to='/'>Home</NavLink></li>
-    <li><NavLink to='/blog'>Blog</NavLink></li>
+    <li><NavLink to='/'>HOME</NavLink></li>
+    <li><NavLink className='m-2' to='/blog'>BLOG</NavLink></li>
     {
       user?
       <>
-      <li><NavLink to='/reviews'>My Reviews</NavLink></li>
-      <li><NavLink to='/addservices'>Add Services</NavLink></li>
-      <li><button onClick={handleLogOut}>Log Out</button></li>
+      <li><NavLink to='/reviews'>MY REVIEWS</NavLink></li>
+      <li><NavLink to='/addservices'>ADD SERVICES</NavLink></li>
+      <li><button onClick={handleLogOut}>LOG OUT</button></li>
       
       </>
       :
-      <li><NavLink to='/login'>Login</NavLink></li>
+      <li><NavLink to='/login'>LOGIN</NavLink></li>
     }
     </>
     return (
 
-        <div className="navbar bg-violet-100">
+        <div className="navbar glass rounded-b-xl fixed z-10 max-w-[1240px]">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -42,7 +42,7 @@ const Header = () => {
        
       </ul>
     </div>
-    <Link to='/' className="btn btn-ghost normal-case text-xl">Tourist Guide</Link>
+    <Link to='/' className="btn btn-ghost normal-case text-2xl font-bold">TOURIST GUIDE</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal p-0">

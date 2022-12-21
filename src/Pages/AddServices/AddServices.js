@@ -36,7 +36,7 @@ const AddServices = () => {
 
     }
     return (
-        <div>
+        <div className='pt-24'>
             <h3 className='text-5xl font-semibold text-primary text-center my-5 uppercase'>Add a Service</h3>
         <form onSubmit={handlePlaceOrder}>
             

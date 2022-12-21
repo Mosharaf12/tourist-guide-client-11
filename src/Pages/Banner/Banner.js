@@ -3,7 +3,8 @@ import './Banner.css'
 
 const Banner = () => {
     return (
-        <div className="carousel w-full img-color mt-5">
+     <div className='pt-24'>
+         <div className="carousel w-full img-color">
   <div id="slide1" className="carousel-item relative w-full slideBer">
    
     <img src="https://nomadparadise.com/wp-content/uploads/2021/04/bangladesh-places-07-1024x683.jpg" alt=''  className="w-full" />
@@ -47,6 +48,7 @@ const Banner = () => {
     </div>
   </div> 
 </div>
+     </div>
     );
 };
 

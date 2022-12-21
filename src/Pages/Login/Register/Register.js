@@ -69,23 +69,24 @@ const Register = () => {
 
 
     return (
-        <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800 mx-auto my-8">
-        <h1 className="text-2xl font-bold text-center">Register</h1>
+       <div className='pt-24'>
+         <div className="w-full max-w-md my-12 p-3 space-y-3 rounded-xl bg-blue-100 text-gray-800 mx-auto">
+        <h1 className="text-4xl font-bold text-blue-600 text-center">REGISTER</h1>
         <form onSubmit={handleSubmit} className="space-y-6 ng-untouched ng-pristine ng-valid">
             <div className="space-y-1 text-sm">
-                <label for="name" className="block text-gray-600">name</label>
+                <label for="name" className="block text-md text-gray-600">Name</label>
                 <input type="text" name="name" id="name" placeholder="name" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-sky-600" />
             </div>
             <div className="space-y-1 text-sm">
-                <label for="photoURL" className="block text-gray-600">photoURL</label>
+                <label for="photoURL" className="block text-md text-gray-600">PhotoURL</label>
                 <input type="text" name="photoURL" id="photoURL" placeholder="photoURL" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-sky-600" />
             </div>
             <div className="space-y-1 text-sm">
-                <label for="email" className="block text-gray-600">email</label>
+                <label for="email" className="block text-md text-gray-600">Email</label>
                 <input type="text" name="email" id="email" placeholder="email" required   className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-sky-600" />
             </div>
             <div className="space-y-1 text-sm">
-                <label for="password" className="block text-gray-600">Password</label>
+                <label for="password" className="block text-md text-gray-600">Password</label>
                 <input type="password" name="password" id="password" placeholder="Password" required  className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-sky-600" />
                 
             </div>
@@ -107,10 +108,11 @@ const Register = () => {
         </div>
         <div className="flex justify-center space-x-4">  
         </div>
-        <p className="text-xs text-center sm:px-6 text-gray-600">Already have an account?
+        <p className="text-md text-center sm:px-6 text-gray-600">Already have an account?
             <Link to='/login' className="underline text-gray-800">Login</Link>
         </p>
     </div>
+       </div>
 
     );
 };

@@ -3,7 +3,7 @@ import React from 'react';
 const Trusted = () => {
     return (
      <div className='my-12'>
-           <section className="p-6 bg-gray-100 text-gray-800">
+           <section className="p-6 bg-gray-100 text-gray-800 rounded-xl">
         <div className="container p-4 mx-auto text-center">
             <h2 className="text-4xl font-bold">Verify by the Trusted Companies</h2>
         </div>

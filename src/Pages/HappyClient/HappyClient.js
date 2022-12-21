@@ -3,7 +3,8 @@ import React from 'react';
 const HappyClient = () => {
     return (
   <div className='my-12'>
-          <section className="m-4 md:m-8 bg-gray-100 text-gray-800">
+          <section className="m-4 md:m-8 bg-gray-100 text-gray-800 rounded-xl">
+			
 	<div className="container mx-auto p-4 my-6 space-y-2 text-center">
 		<h2 className="text-5xl font-bold">Tourist Location Details</h2>
 		

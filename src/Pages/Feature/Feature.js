@@ -3,7 +3,8 @@ import React from 'react';
 const Feature = () => {
     return (
  <div className='my-20'>
-	       <section className="p-4 lg:p-8 bg-gray-100 text-gray-800">
+	       <section className="p-4 lg:p-8 rounded-xl bg-gray-100 text-gray-800">
+		   <h3 className='text-4xl font-bold text-center my-5'>POPULAR TOURIST PLACE</h3>
 	<div className="container mx-auto space-y-12">
 		<div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
 			<img src="https://cdn.pixabay.com/photo/2018/03/20/14/00/sea-3243357__480.jpg" alt="" className="h-80 bg-gray-500 aspect-video" />

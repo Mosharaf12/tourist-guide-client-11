@@ -7,7 +7,7 @@ const Reviews = ({handlePostReview}) => {
          
     return (
         <div>
-             <div className='p-10'>
+             <div className='pt-10'>
             <h1 className='uppercase text-3xl py-4'>Reviews about journey</h1>
             <div className='flex items-center'>
             <div className='flex items-center'>
